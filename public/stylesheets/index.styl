@@ -1,7 +1,7 @@
 // define core styles
 
 html
-  font-family sans-serif
+  font-family 'source-code-pro' sans-serif
 
 body
 body > div
@@ -47,7 +47,6 @@ p
   text-align center
 
 // Colors
-
 .black
   background hsl(0, 0%, 0%) !important
   border-color hsl(0, 0%, 0%) !important
@@ -187,6 +186,7 @@ $btn-generic
 .btn
 .btn-flat
   @extends $btn-generic
+  {black}
   border solid
   border-color
   outline 0
@@ -293,23 +293,6 @@ nav
   top 1rem
   right 1rem
 
-//Input
-
-input
-  &[type="text"]
-    height 30px
-    border none
-    width 150px
-    border-bottom 2px solid rgba(0,0,0,.5)
-    font-size 1rem
-    font-family sans-serif
-    margin 0px 3px 15px 3px
-    &:focus
-      border-bottom 2px solid rgba(0,0,0,1)
-      outline none
-
-
-// Slider
 
 
 //Footer
@@ -354,7 +337,7 @@ footer
   height 10%
   padding 5px 30px 10px 10px
   font-size 1.5rem
-  border-bottom 1px solid rgba(black, .1)
+  border-bottom 1px solid rgba(0,0,0, .1)
 
 .caption::after
   content attr(data-description)
@@ -480,3 +463,45 @@ footer
   height 24px
   right 13px
   top 7px
+
+//Input
+
+input
+  &[type="text"]
+    height 30px
+    border none
+    width 150px
+    border-bottom 2px solid rgba(0,0,0,.5)
+    font-size 1rem
+    font-family sans-serif
+    margin 0px 3px 15px 3px
+    &:focus
+      border-bottom 2px solid rgba(0,0,0,1)
+      outline none
+  &[type="radio"]
+    display none
+    & + label
+      color hsl(184, 6%, 53%)
+      font-family Arial, sans-serif
+      font-size 14px
+      margin-left 12px
+      span
+        display inline-block
+        width 19px
+        height 19px
+        margin -1px 4px 0 0
+        vertical-align middle
+        cursor pointer
+        -moz-border-radius 50%
+        border-radius 50%
+        background-color hsl(184, 6%, 53%)
+
+input[type="radio"]:checked
+  & + label
+    span
+      background-color hsl(168, 76%, 42%)
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span
+  -webkit-transition background-color 0.4s linear
+  transition background-color 0.4s linear

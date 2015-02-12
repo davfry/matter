@@ -8,5 +8,6 @@ module.exports = {
   '/buttons': 'buttons',
   '/modal': 'modal',
   '/psuedo': 'psuedo',
-  '/accordian': 'accordian'
+  '/accordian': 'accordian',
+  '/inputs': 'inputs'
 };
