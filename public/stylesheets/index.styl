@@ -179,10 +179,10 @@ $btn-generic
   text-transform uppercase
   cursor pointer
 
-
 .btn:hover
   box-shadow 0 4px 8px 0 rgba(2,2,2,.75)
 
+input[type="submit"]
 .btn
 .btn-flat
   @extends $btn-generic
@@ -471,11 +471,12 @@ input
     height 30px
     border none
     width 150px
-    border-bottom 2px solid rgba(0,0,0,.5)
+    border-bottom 2px solid hsl(184, 6%, 53%)
     font-size 1rem
     margin 0px 3px 15px 3px
+    background transparent
     &:focus
-      border-bottom 2px solid rgba(0,0,0,1)
+      border-bottom 2px solid hsl(168, 76%, 42%)
       outline none
     &[placeholder]
       font-family 'source-code-pro'
@@ -497,6 +498,10 @@ input
         -moz-border-radius 50%
         border-radius 50%
         background-color hsl(184, 6%, 53%)
+  &[type="submit"]
+    line-height 0
+    &:focus
+      outline none
 
 input[type="radio"]:checked
   & + label
