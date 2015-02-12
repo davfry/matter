@@ -1,6 +1,6 @@
-# material-stylus
+# matter
 
-material design stylus elements
+matter ui components
 
 ## License
 

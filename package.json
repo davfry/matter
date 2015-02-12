@@ -1,7 +1,7 @@
 {
   "name": "material-stylus",
   "version": "0.1.0",
-  "description": "material design stylus elements",
+  "description": "matter ui components",
   "author": "Dave Fryer <dave@morningperson.co>",
   "main": "app.js",
   "scripts": {
