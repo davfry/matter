@@ -1,0 +1,400 @@
+// define core styles
+
+html
+  font-family sans-serif
+
+body
+body > div
+  height 100%
+  width 100%
+  background hsl(0, 0%, 98%)
+body
+  position absolute
+  margin 0
+  text-align center
+  > div
+    display flex
+    flex-direction column
+    justify-content center
+
+h1,h2,h3,h4,h5,h6
+  color gray--base
+  font-weight bold
+  margin-bottom 5rem
+  text-transform uppercase
+
+h1
+  font-size 2rem
+
+h2
+  font-size 1.5rem
+  margin-bottom 1.5rem
+
+a
+  padding 10px
+  text-decoration none
+  outline none
+  cursor pointer
+
+p
+  font-size 1rem
+
+.intro
+  margin auto
+  width 30vw
+  left 35vw
+  text-align center
+
+// Colors
+
+.black
+  background hsl(0, 0%, 0%) !important
+  border-color hsl(0, 0%, 0%) !important
+.black-text
+  color hsl(0, 0%, 0%) !important
+.white
+  background hsl(0, 0%, 100%) !important
+  border-color hsl(0, 0%, 100%) !important
+.white-text
+  color hsl(0, 0%, 100%) !important
+.off-white
+  background hsl(0, 0%, 96%) !important
+  border-color hsl(0, 0%, 96%) !important
+.off-white-text
+  color hsl(0, 0%, 96%) !important
+.grey
+  background hsl(184, 6%, 53%) !important
+  border-color hsl(184, 6%, 53%) !important
+.grey-text
+  color hsl(184, 6%, 53%) !important
+.red
+  background hsl(6, 78%, 57%) !important
+  border-color hsl(6, 78%, 57%) !important
+.red-text
+  color hsl(6, 78%, 57%) !important
+.yellow
+  background hsl(48, 89%, 50%) !important
+  border-color hsl(48, 89%, 50%) !important
+.yellow-text
+  color hsl(48, 89%, 50%) !important
+.blue
+  background hsl(204, 70%, 53%) !important
+  border-color hsl(204, 70%, 53%) !important
+.blue-text
+  color hsl(204, 70%, 53%) !important
+.orange
+  background hsl(28, 80%, 52%) !important
+  border-color hsl(28, 80%, 52%) !important
+.orange-text
+  color hsl(28, 80%, 52%) !important
+.green
+  background hsl(145, 63%, 49%) !important
+  border-color hsl(145, 63%, 49%) !important
+.green-text
+  color hsl(145, 63%, 49%) !important
+.purple
+  background hsl(283, 39%, 53%) !important
+  border-color hsl(283, 39%, 53%) !important
+.purple-text
+  color hsl(283, 39%, 53%) !important
+.yellow-orange
+  background hsl(37, 90%, 51%) !important
+  border-color hsl(37, 90%, 51%) !important
+.yellow-orange-text
+  color hsl(37, 90%, 51%) !important
+// .red-orange
+//   background hsl(, ,) !important
+//   border-color hsl(, ,) !important
+// .red-orange-text
+//   color hsl(, ,) !important
+// .red-violet
+//   background hsl(, , ) !important
+//   border-color hsl(, , ) !important
+// .red-violet-text
+//   color hsl(, , ) !important
+// .blue-violet
+//   background hsl(, , ) !important
+//   border-color hsl(, , ) !important
+// .blue-violet-text
+//   color hsl(, , ) !important
+.blue-green
+  background hsl(168, 76%, 42%) !important
+  border-color hsl(168, 76%, 42%) !important
+.blue-green-text
+  color hsl(168, 76%, 42%) !important
+.yellow-green
+  background hsl(66, 70%, 54%) !important
+  border-color hsl(66, 70%, 54%) !important
+.yellow-green-text
+  color hsl(66, 70%, 54%) !important
+.color
+  height 50px
+  width 50px
+  display inline-block
+  margin-bottom 15px
+//Mixins
+
+box-shadow()
+  -webkit-box-shadow arguments
+  -moz-box-shadow arguments
+  box-shadow arguments
+
+border-radius()
+  border-radius arguments
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+
+transition()
+  transition arguments
+  -webkit-transition arguments
+  -moz-transition arguments
+
+// Shadow
+
+.btn
+.btn-circ
+.shdw
+  box-shadow 0 4px 8px 0 rgba(2,2,2,.5)
+
+// Hover
+
+.btn
+.btn-circ
+.btn-flat
+.btn-outline
+  &:hover
+    -webkit-filter brightness(95%)
+  &:active
+    -webkit-filter brightness(110%)
+// Buttons
+
+$btn-generic
+  font-size 1rem
+  display inline-block
+  height 30px
+  margin 0px 3px 15px 3px
+  padding 0 2rem
+  border-radius 3px
+  line-height 30px
+  text-transform uppercase
+  cursor pointer
+
+
+.btn:hover
+  box-shadow 0 4px 8px 0 rgba(2,2,2,.75)
+
+.btn
+.btn-flat
+  @extends $btn-generic
+  border solid
+  border-color
+  outline 0
+  background-clip padding-box
+  text-decoration none
+  color #ECECEC
+  text-align center
+  letter-spacing 1px
+  transition 0.2s ease-out
+
+.btn-outline
+  @extends $btn-generic
+  outline 0
+  background-clip padding-box
+  border 2px solid
+  background none !important
+  color @border-color
+
+
+.btn-circ
+  display inline-block
+  position relative
+  z-index 1
+  width 40px
+  height 40px
+  line-height 40px
+  padding 0
+  border-radius 50%
+  background-clip padding-box
+  transition 0.25s
+  cursor pointer
+  margin 0px 3px 15px 3px
+  font-size 1.25rem
+  font-weight bold
+  text-align center
+  color #ECECEC
+  &:hover
+    box-shadow 0 4px 8px 0 rgba(2,2,2,.75)
+// Nav
+nav
+.nav
+  position absolute
+  color #ECECEC
+  letter-spacing 1px
+  width 100%
+  height 56px
+  line-height 56px
+  top 0
+  border-bottom solid 1px #E5E5E5
+  &-list
+    display inline-block
+    left 0
+    margin 0
+    padding 0
+    position fixed
+    text-align center
+    top 0
+    width 100%
+    z-index 1
+  &-item
+    display inline-block
+    padding 0 40px
+    line-height 10vh
+    margin 0
+  &-logo
+    font-size 1.25rem
+    float left
+    margin-left 5rem
+    display inline-block
+    padding 0
+
+//Modal
+
+.modal-overlay
+  position absolute
+  z-index 9999
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background-color rgba(0,0,0,.7)
+  opacity 0.95
+
+.modal-inner
+  padding 30px
+  z-index 10000
+  position absolute
+  width 50%
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+  -webkit-transform translate(-50%, -50%)
+  -moz-transform translate(-50%, -50%)
+  background-color #fff
+  box-shadow 4px 4px 80px #000
+  > p
+    font-size 1rem
+
+.modal-close
+  position absolute
+  cursor pointer
+  top 1rem
+  right 1rem
+
+//Input
+
+input
+  &[type="text"]
+    height 30px
+    border none
+    width 150px
+    border-bottom 2px solid rgba(0,0,0,.5)
+    font-size 1rem
+    font-family sans-serif
+    margin 0px 3px 15px 3px
+    &:focus
+      border-bottom 2px solid rgba(0,0,0,1)
+      outline none
+
+
+// Slider
+
+
+//Footer
+
+footer
+  border-top solid 1px
+  border-color #E5E5E5
+  bottom 0px
+  position absolute
+  margin-top 30px
+  padding 30px
+  width 100%
+  color #BABABA
+  .footer-copyright
+    overflow hidden
+    height 50px
+    line-height 50px
+    color rgba(255, 255, 255, 0.8)
+    background-color rgba(51, 51, 51, 0.08)
+
+//Cards
+.caption
+  display inline-block
+  position relative
+  margin 10px
+  img
+    display block
+    max-width 300px
+
+.caption::before,
+.caption::after
+  position absolute
+  left 100%
+  width 90%
+  margin 0 0 0 10%
+  font-weight 300
+  color #89867e
+
+.caption::before
+  content attr(data-title)
+  top 0
+  height 10%
+  padding 5px 30px 10px 10px
+  font-size 1.5rem
+  border-bottom 1px solid rgba(black, .1)
+
+.caption::after
+  content attr(data-description)
+  top 15%
+  padding 20px 10px 0
+  font-size 1rem
+
+.caption-hover
+  display inline-block
+  position relative
+  margin 10px
+  img
+    display block
+    max-width 300px
+
+.caption-hover::before,
+.caption-hover::after
+  opacity 0
+  position absolute
+  width 100%
+  color #fff
+  padding 20px
+  transition opacity 0.3s
+  left 0
+  max-width 100%
+  box-sizing border-box
+
+.caption-hover::before
+  content attr(data-title)
+  top 0
+  height 20%
+  background rgba(0,0,0,.7)
+  font-size 1.5rem
+
+.caption-hover::after
+  content attr(data-description)
+  top 20%
+  height 80%
+  background rgba(255,255,255,.9)
+  color black
+  font-size 1rem
+  text-align left
+
+.caption-hover:hover::before,
+.caption-hover:hover::after
+    opacity 1

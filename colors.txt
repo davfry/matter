@@ -1,0 +1,37 @@
+// Colors
+
+.black
+  background hsla(0, 0%, 10%, 1) !important
+  border-color hsla(0, 0%, 10%, 1) !important
+.black-text
+  color hsla(0, 0%, 10%, 1) !important
+.white
+  background hsla(0, 0%, 93%, 1) !important
+  border-color hsla(0, 0%, 93%, 1) !important
+.white-text
+  color hsla(0, 0%, 93%, 1) !important
+.blue
+  background hsla(187, 100%, 42%, 1) !important
+  border-color hsla(187, 100%, 42%, 1) !important
+.blue-text
+  color hsla(187, 100%, 42%, 1) !important
+.pink
+  background hsla(333, 81%, 50%, 1) !important
+  border-color hsla(333, 81%, 50%, 1) !important
+.pink-text
+  color hsla(333, 81%, 50%, 1) !important
+.green
+  background hsla(167, 96%, 44%, 1) !important
+  border-color hsla(167, 96%, 44%, 1) !important
+.green-text
+  color hsla(167, 96%, 44%, 1) !important
+.yellow
+  background hsla(64, 96%, 62%, 1) !important
+  border-color hsla(64, 96%, 62%, 1) !important
+.yellow-text
+  color hsla(64, 96%, 62%, 1) !important
+.purple
+  background hsla(287, 45%, 49%, 1) !important
+  border-color hsla(287, 45%, 49%, 1) !important
+.purple-text
+  color hsla(287, 45%, 49%, 1) !important

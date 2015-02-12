@@ -1,0 +1,26 @@
+{
+  "name": "material-stylus",
+  "version": "0.1.0",
+  "description": "material design stylus elements",
+  "author": "Dave Fryer <dave@morningperson.co>",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/.bin/startup start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davfry/material-stylus"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.x.x"
+  },
+  "dependencies": {
+    "poe-ui": "^0.4.15",
+    "startup": "^1.0.3",
+    "envs": "^0.1.6"
+  },
+  "devDependencies": {
+    "lr": "^0.1.15"
+  }
+}
