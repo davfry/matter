@@ -7,5 +7,6 @@ module.exports = {
   '/color': 'color',
   '/buttons': 'buttons',
   '/modal': 'modal',
-  '/psuedo': 'psuedo'
+  '/psuedo': 'psuedo',
+  '/accordian': 'accordian'
 };
