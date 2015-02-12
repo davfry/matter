@@ -473,16 +473,18 @@ input
     width 150px
     border-bottom 2px solid rgba(0,0,0,.5)
     font-size 1rem
-    font-family sans-serif
     margin 0px 3px 15px 3px
     &:focus
       border-bottom 2px solid rgba(0,0,0,1)
       outline none
+    &[placeholder]
+      font-family 'source-code-pro'
   &[type="radio"]
     display none
+    position relative
     & + label
+      position absolute
       color hsl(184, 6%, 53%)
-      font-family Arial, sans-serif
       font-size 14px
       margin-left 12px
       span
