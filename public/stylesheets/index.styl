@@ -53,7 +53,7 @@ p
 .black-text
   color hsl(0, 0%, 0%) !important
 .white
-  background hsl(0, 0%, 100%) !important
+  background hsl(0, 0%, 100%)
   border-color hsl(0, 0%, 100%) !important
 .white-text
   color hsl(0, 0%, 100%) !important
@@ -182,11 +182,9 @@ $btn-generic
 .btn:hover
   box-shadow 0 4px 8px 0 rgba(2,2,2,.75)
 
-input[type="submit"]
 .btn
 .btn-flat
   @extends $btn-generic
-  {black}
   border solid
   border-color
   outline 0
@@ -478,6 +476,7 @@ input
     &:focus
       border-bottom 2px solid hsl(168, 76%, 42%)
       outline none
+      transition border-color 0.5s ease
     &[placeholder]
       font-family 'source-code-pro'
   &[type="radio"]
@@ -499,9 +498,27 @@ input
         border-radius 50%
         background-color hsl(184, 6%, 53%)
   &[type="submit"]
-    line-height 0
-    &:focus
-      outline none
+    height 30px
+    font-size 1rem
+    background transparent
+    color hsl(184, 6%, 53%)
+    border none
+    text-align center
+    letter-spacing .15rem
+    transition color 0.5s ease
+    outline none
+    cursor pointer
+    &:hover
+      cursor pointer
+      color hsl(168, 76%, 42%)
+      transition color 0.5s ease
+
+  &[type="checkbox"]
+    height 20px
+    width @height
+    background-color hsl(184, 6%, 53%)
+    &:checked
+      background-color hsl(168, 76%, 42%)
 
 input[type="radio"]:checked
   & + label
