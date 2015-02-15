@@ -479,24 +479,6 @@ input
       transition border-color 0.5s ease
     &[placeholder]
       font-family 'source-code-pro'
-  &[type="radio"]
-    display none
-    position relative
-    & + label
-      position absolute
-      color hsl(184, 6%, 53%)
-      font-size 14px
-      margin-left 12px
-      span
-        display inline-block
-        width 19px
-        height 19px
-        margin -1px 4px 0 0
-        vertical-align middle
-        cursor pointer
-        -moz-border-radius 50%
-        border-radius 50%
-        background-color hsl(184, 6%, 53%)
   &[type="submit"]
   &[type="reset"]
     height 30px
@@ -513,20 +495,3 @@ input
       cursor pointer
       color hsl(168, 76%, 42%)
       transition color 0.5s ease
-
-  &[type="checkbox"]
-    height 20px
-    width @height
-    background-color hsl(184, 6%, 53%)
-    &:checked
-      background-color hsl(168, 76%, 42%)
-
-input[type="radio"]:checked
-  & + label
-    span
-      background-color hsl(168, 76%, 42%)
-
-input[type="radio"] + label span,
-input[type="radio"]:checked + label span
-  -webkit-transition background-color 0.4s linear
-  transition background-color 0.4s linear
