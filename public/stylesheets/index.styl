@@ -240,10 +240,15 @@ nav
     margin 0
     padding 0
     position fixed
-    text-align center
+    text-align right
     top 0
     width 100%
     z-index 1
+    & > a
+      color black
+      &:hover
+        color hsl(168, 76%, 42%)
+        transition color 0.5s ease
   &-item
     display inline-block
     padding 0 40px
@@ -301,9 +306,10 @@ footer
   bottom 0px
   position absolute
   margin-top 30px
-  padding 30px
+  padding 10px
   width 100%
   color #BABABA
+  font-size 0.75rem
   .footer-copyright
     overflow hidden
     height 50px
