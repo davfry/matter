@@ -1,8 +1,9 @@
 form
   input(type='text', placeholder='text input')
   br
-  input(type='radio')
-  | Radio
+  .options
+    input#touch.hide(name='option', type='radio')
+    label(for='touch') Touch Me
   br
   input(type='submit')
   br
