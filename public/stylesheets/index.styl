@@ -46,92 +46,51 @@ p
   left 35vw
   text-align center
 
-// Colors
-.black
-  background hsl(0, 0%, 0%) !important
-  border-color hsl(0, 0%, 0%) !important
-.black-text
-  color hsl(0, 0%, 0%) !important
-.white
-  background hsl(0, 0%, 100%)
-  border-color hsl(0, 0%, 100%) !important
-.white-text
-  color hsl(0, 0%, 100%) !important
-.off-white
-  background hsl(0, 0%, 96%) !important
-  border-color hsl(0, 0%, 96%) !important
-.off-white-text
-  color hsl(0, 0%, 96%) !important
-.grey
-  background hsl(184, 6%, 53%) !important
-  border-color hsl(184, 6%, 53%) !important
-.grey-text
-  color hsl(184, 6%, 53%) !important
-.red
-  background hsl(6, 78%, 57%) !important
-  border-color hsl(6, 78%, 57%) !important
-.red-text
-  color hsl(6, 78%, 57%) !important
-.yellow
-  background hsl(48, 89%, 50%) !important
-  border-color hsl(48, 89%, 50%) !important
-.yellow-text
-  color hsl(48, 89%, 50%) !important
-.blue
-  background hsl(204, 70%, 53%) !important
-  border-color hsl(204, 70%, 53%) !important
-.blue-text
-  color hsl(204, 70%, 53%) !important
-.orange
-  background hsl(28, 80%, 52%) !important
-  border-color hsl(28, 80%, 52%) !important
-.orange-text
-  color hsl(28, 80%, 52%) !important
-.green
-  background hsl(145, 63%, 49%) !important
-  border-color hsl(145, 63%, 49%) !important
-.green-text
-  color hsl(145, 63%, 49%) !important
-.purple
-  background hsl(283, 39%, 53%) !important
-  border-color hsl(283, 39%, 53%) !important
-.purple-text
-  color hsl(283, 39%, 53%) !important
-.yellow-orange
-  background hsl(37, 90%, 51%) !important
-  border-color hsl(37, 90%, 51%) !important
-.yellow-orange-text
-  color hsl(37, 90%, 51%) !important
-// .red-orange
-//   background hsl(, ,) !important
-//   border-color hsl(, ,) !important
-// .red-orange-text
-//   color hsl(, ,) !important
-// .red-violet
-//   background hsl(, , ) !important
-//   border-color hsl(, , ) !important
-// .red-violet-text
-//   color hsl(, , ) !important
-// .blue-violet
-//   background hsl(, , ) !important
-//   border-color hsl(, , ) !important
-// .blue-violet-text
-//   color hsl(, , ) !important
-.blue-green
-  background hsl(168, 76%, 42%) !important
-  border-color hsl(168, 76%, 42%) !important
-.blue-green-text
-  color hsl(168, 76%, 42%) !important
-.yellow-green
-  background hsl(66, 70%, 54%) !important
-  border-color hsl(66, 70%, 54%) !important
-.yellow-green-text
-  color hsl(66, 70%, 54%) !important
+
+colors = {
+  'black': hsl(0, 0%, 0%),
+  'white': hsl(0, 0%, 100%),
+  'off-white': hsl(0, 0%, 96%),
+  'grey': hsl(240, 2%, 57%),
+  'pink': hsl(350, 100%, 59%),
+  'red-orange': hsl(7, 100%, 57%),
+  'orange': hsl(35, 100%, 50%),
+  'yellow': hsl(48, 100%, 50%),
+  'green': hsl(119, 65%, 58%),
+  'red': hsl(0, 100%, 59%),
+  'sky': hsl(199, 74%, 54%),
+  'blue': hsl(212, 100%, 50%),
+  'purple': hsl(272, 99%, 54%)
+  }
+
+shades = {
+  'dark': 20%,
+  'darker': 40%,
+  'darkest': 60%,
+  'light': 20%,
+  'lighter': 40%,
+  'lightest': 60%
+}
+
 .color
-  height 50px
-  width 50px
-  display inline-block
-  margin-bottom 15px
+  for col, colValue in colors
+    &-{col}
+      background colValue
+      border-color colValue
+      height 50px
+      width 50px
+      display inline-block
+      margin 25px
+
+      for key, value in shades
+          &-{key}
+            fn = match('^light', key) ? lighten : darken
+            background fn(colValue, value)
+            border-color fn(colValue, value)
+            height 50px
+            width 50px
+            display inline-block
+            margin 25px
 //Mixins
 
 box-shadow()
@@ -149,25 +108,8 @@ transition()
   -webkit-transition arguments
   -moz-transition arguments
 
-// Shadow
 
-.btn
-.btn-circ
-.shdw
-  box-shadow 0 4px 8px 0 rgba(2,2,2,.5)
-
-// Hover
-
-.btn
-.btn-circ
-.btn-flat
-.btn-outline
-  &:hover
-    -webkit-filter brightness(95%)
-  &:active
-    -webkit-filter brightness(110%)
 // Buttons
-
 $btn-generic
   font-size 1rem
   display inline-block
@@ -178,33 +120,13 @@ $btn-generic
   line-height 30px
   text-transform uppercase
   cursor pointer
-
-.btn:hover
-  box-shadow 0 4px 8px 0 rgba(2,2,2,.75)
-
-.btn
-.btn-flat
-  @extends $btn-generic
-  border solid
-  border-color
-  outline 0
-  background-clip padding-box
-  text-decoration none
-  color #ECECEC
-  text-align center
-  letter-spacing 1px
-  transition 0.2s ease-out
-
-.btn-outline
-  @extends $btn-generic
-  outline 0
-  background-clip padding-box
   border 2px solid
-  background none !important
-  color @border-color
+  &:hover
+    -webkit-filter brightness(95%)
+  &:active
+    -webkit-filter brightness(110%)
 
-
-.btn-circ
+$btn-circ
   display inline-block
   position relative
   z-index 1
@@ -221,8 +143,72 @@ $btn-generic
   font-weight bold
   text-align center
   color #ECECEC
+  border 2px solid
   &:hover
-    box-shadow 0 4px 8px 0 rgba(2,2,2,.75)
+    -webkit-filter brightness(95%)
+  &:active
+    -webkit-filter brightness(110%)
+
+.btn
+  for col, colValue in colors
+    &-{col}
+      background colValue
+      border-color colValue
+      color #ececec
+      @extends $btn-generic
+
+      for key, value in shades
+          &-{key}
+            fn = match('^light', key) ? lighten : darken
+            background fn(colValue, value)
+            border-color fn(colValue, value)
+            color #ececec
+            @extends $btn-generic
+
+.btn-outline
+  for col, colValue in colors
+    &-{col}
+      background transparent
+      border-color colValue
+      color colValue
+      @extends $btn-generic
+
+      for key, value in shades
+          &-{key}
+            fn = match('^light', key) ? lighten : darken
+            border-color fn(colValue, value)
+            color fn(colValue, value)
+            @extends $btn-generic
+
+.btn-circ
+  for col, colValue in colors
+    &-{col}
+      background colValue
+      border-color colValue
+      @extends $btn-circ
+
+      for key, value in shades
+          &-{key}
+            fn = match('^light', key) ? lighten : darken
+            border-color fn(colValue, value)
+            background fn(colValue, value)
+            @extends $btn-circ
+
+.btn-circ-outline
+  for col, colValue in colors
+    &-{col}
+      background transparent
+      border-color colValue
+      color colValue
+      @extends $btn-circ
+
+      for key, value in shades
+          &-{key}
+            fn = match('^light', key) ? lighten : darken
+            border-color fn(colValue, value)
+            color fn(colValue, value)
+            @extends $btn-circ
+
 // Nav
 nav
 .nav
