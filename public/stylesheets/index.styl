@@ -457,6 +457,7 @@ footer
 //Input
 
 form
+  display inline-block
   width 70vw
   margin auto
   text-align left
@@ -497,8 +498,15 @@ input
     outline none
     cursor pointer
     text-transform uppercase
+  &[type="submit"]
     &:hover
     &:focus
       cursor pointer
-      color hsl(212, 100%, 50%)
+      color hsl(119, 65%, 58%)
+      transition color 0.5s ease
+  &[type="reset"]
+    &:hover
+    &:focus
+      cursor pointer
+      color hsl(0, 100%, 59%)
       transition color 0.5s ease
