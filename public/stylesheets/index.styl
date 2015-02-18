@@ -234,7 +234,7 @@ nav
     & > a
       color black
       &:hover
-        color hsl(168, 76%, 42%)
+        color hsl(272, 99%, 54%)
         transition color 0.5s ease
   &-item
     display inline-block
@@ -456,17 +456,23 @@ footer
 
 //Input
 
+form
+  width 70vw
+  margin auto
+
 input
   &[type="text"]
+  &[type="password"]
+  &[type="email"]
     height 30px
     border none
-    width 150px
+    width 50%
     border-bottom 2px solid hsl(184, 6%, 53%)
     font-size 1rem
     margin 0px 3px 15px 3px
     background transparent
     &:focus
-      border-bottom 2px solid hsl(168, 76%, 42%)
+      border-bottom 2px solid hsl(212, 100%, 50%)
       outline none
       transition border-color 0.5s ease
     &[placeholder]
@@ -483,7 +489,8 @@ input
     transition color 0.5s ease
     outline none
     cursor pointer
+    text-transform uppercase
     &:hover
       cursor pointer
-      color hsl(168, 76%, 42%)
+      color hsl(212, 100%, 50%)
       transition color 0.5s ease
