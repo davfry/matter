@@ -46,9 +46,6 @@ p
   left 35vw
   text-align center
 
-.fa
-  vertical-align middle
-
 colors = {
   'black': hsl(0, 0%, 0%),
   'white': hsl(0, 0%, 100%),
@@ -94,23 +91,6 @@ shades = {
             width 50px
             display inline-block
             margin 25px
-
-.flex-container
-  padding 0
-  margin 0
-  list-style none
-  display -webkit-box
-  display -moz-box
-  display -ms-flexbox
-  display -webkit-flex
-  display flex
-  -webkit-flex-flow row wrap
-  justify-content space-around
-
-.flex-item
-  padding 5px
-  margin-top 10px
-  text-align center
 
 
 //Mixins
@@ -232,36 +212,20 @@ $btn-circ
             @extends $btn-circ
 
 // Nav
+
 nav
 .nav
-  position absolute
-  color #ECECEC
-  letter-spacing 1px
-  width 100%
-  height 56px
-  line-height 56px
-  top 0
-  border-bottom solid 1px #E5E5E5
-  &-list
-    display inline-block
-    left 0
-    margin 0
-    padding 0
-    position fixed
-    text-align right
-    top 0
-    width 100%
-    z-index 1
-    & > a
-      color black
-      &:hover
-        color hsl(272, 99%, 54%)
-        transition color 0.5s ease
-  &-item
-    display inline-block
-    padding 0 40px
-    line-height 10vh
-    margin 0
+  for col, colValue in colors
+    &-{col}
+      position absolute
+      color #ECECEC
+      letter-spacing 1px
+      width 100%
+      height 56px
+      line-height 56px
+      top 0
+      border-bottom solid 1px colValue
+
   &-logo
     font-size 1.25rem
     float left
@@ -269,7 +233,99 @@ nav
     display inline-block
     padding 0
     z-index 1000
+    color black !important
+      &:hover
+        color hsl(240, 2%, 57%) !important
 
+  &-list
+    right 0
+    margin 0
+    padding 0
+    position fixed
+    text-align right
+    top 0
+    padding 0 40px
+  ul
+    background transparent
+    list-style none
+    position relative
+    display inline-table
+    ul
+      display none
+      background transparent
+      padding 0
+      position absolute
+      top 100%
+      li
+        float none
+        position relative
+        a
+          color hsl(240, 2%, 57%)
+          &:hover
+            color hsl(240, 2%, 57%)
+            &:active
+              color hsl(272, 99%, 54%)
+    li
+      float left
+      &:hover
+        & > ul
+          display block
+        a
+          color hsl(272, 99%, 54%)
+          &:active
+            color hsl(240, 2%, 57%)
+
+      a
+        color hsl(240, 2%, 57%)
+        text-decoration none
+    &:after
+      content ""
+      clear both
+      display block
+
+
+// nav
+// .nav
+//   position absolute
+//   color #ECECEC
+//   letter-spacing 1px
+//   width 100%
+//   height 56px
+//   line-height 56px
+//   top 0
+//   border-bottom solid 1px #E5E5E5
+//   &-list
+//     display inline-block
+//     left 0
+//     margin 0
+//     padding 0
+//     position fixed
+//     text-align right
+//     top 0
+//     width 100%
+//     z-index 1
+//     & > a
+//       color black
+//       &:hover
+//         color hsl(272, 99%, 54%)
+//         transition color 0.5s ease
+//     & > i
+//       color black
+//       &:hover
+//         color hsl(272, 99%, 54%)
+//         transition color 0.5s ease
+//   &-item
+//     display inline-block
+//     padding 0 40px
+//     line-height 10vh
+//     margin 0
+//   &-logo
+//     font-size 1.25rem
+//     float left
+//     margin-left 5rem
+//     display inline-block
+//     padding 0
+//     z-index 1000
 
 //Modal
 
@@ -506,6 +562,33 @@ input
       transition border-color 0.5s ease
     &[placeholder]
       font-family 'source-code-pro'
+  &[type="submit"]
+  &[type="reset"]
+    height 30px
+    font-size 1rem
+    background transparent
+    color hsl(184, 6%, 53%)
+    border none
+    text-align center
+    letter-spacing .15rem
+    transition color 0.5s ease
+    outline none
+    cursor pointer
+    text-transform uppercase
+  &[type="submit"]
+    &:hover
+    &:focus
+      cursor pointer
+      color hsl(119, 65%, 58%)
+      transition color 0.5s ease
+  &[type="reset"]
+    &:hover
+    &:focus
+      cursor pointer
+      color hsl(0, 100%, 59%)
+      transition color 0.5s ease
+
+button
   &[type="submit"]
   &[type="reset"]
     height 30px
