@@ -86,13 +86,15 @@ shades = {
 .color
   for col, colValue in colors
     &-{col}
+      position relative
       background colValue
       border-color colValue
       height 50px
       width 50px
       display inline-block
       margin 25px
-
+      &:hover .hover-color
+        display block
       for key, value in shades
           &-{key}
             fn = match('^light', key) ? lighten : darken
@@ -102,6 +104,19 @@ shades = {
             width 50px
             display inline-block
             margin 25px
+
+.hover-color
+  display none
+  position absolute
+  top -20px
+  width 100px
+  text-align left
+
+//Grid
+.grid
+  display flex
+  &-unit
+    flex 1
 
 
 //Mixins
