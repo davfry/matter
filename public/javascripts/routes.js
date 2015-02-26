@@ -9,5 +9,6 @@ module.exports = {
   '/modal': 'modal',
   '/psuedo': 'psuedo',
   '/accordian': 'accordian',
-  '/inputs': 'inputs'
+  '/inputs': 'inputs',
+  '/about': 'about'
 };

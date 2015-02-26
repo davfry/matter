@@ -18,10 +18,8 @@ body
     justify-content center
 
 h1,h2,h3,h4,h5,h6
-  color gray--base
-  font-weight bold
-  margin-bottom 5rem
-  text-transform uppercase
+  margin-bottom 2.5rem
+  text-transform lowercase
 
 h1
   font-size 2rem
@@ -35,6 +33,9 @@ a
   text-decoration none
   outline none
   cursor pointer
+  color hsl(272, 99%, 54%)
+  &:hover
+    color hsl(240, 2%, 57%)
 
 p
   font-size 1rem
@@ -43,8 +44,12 @@ p
 .intro
   margin auto
   width 30vw
-  left 35vw
-  text-align center
+  text-align left
+
+.explain
+  margin auto
+  width 50vw
+  text-align left
 
 colors = {
   'black': hsl(0, 0%, 0%),
@@ -614,3 +619,8 @@ button
       cursor pointer
       color hsl(0, 100%, 59%)
       transition color 0.5s ease
+
+.avatar
+  max-width 150px
+  height auto
+  border-radius 150px
