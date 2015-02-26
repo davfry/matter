@@ -172,10 +172,7 @@ $btn-circ
   text-align center
   color #ECECEC
   border 2px solid
-  &:hover
-    -webkit-filter brightness(95%)
-  &:active
-    -webkit-filter brightness(110%)
+
 
 .btn
   for col, colValue in colors
@@ -230,6 +227,9 @@ $btn-circ
       background colValue
       border-color colValue
       @extends $btn-circ
+      &:active
+        background transparent
+        color @border-color
 
       for key, value in shades
           &-{key}
@@ -237,6 +237,9 @@ $btn-circ
             border-color fn(colValue, value)
             background fn(colValue, value)
             @extends $btn-circ
+            &:active
+              background transparent
+              color @border-color
 
 .btn-circ-outline
   for col, colValue in colors
@@ -245,6 +248,9 @@ $btn-circ
       border-color colValue
       color colValue
       @extends $btn-circ
+      &:active
+        background @border-color
+        color #ECECEC
 
       for key, value in shades
           &-{key}
@@ -252,7 +258,9 @@ $btn-circ
             border-color fn(colValue, value)
             color fn(colValue, value)
             @extends $btn-circ
-
+            &:active
+              background @border-color
+              color #ECECEC
 // Nav
 
 nav
