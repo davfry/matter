@@ -149,10 +149,10 @@ $btn-generic
   text-transform uppercase
   cursor pointer
   border 2px solid
-  &:hover
-    -webkit-filter brightness(95%)
-  &:active
-    -webkit-filter brightness(110%)
+  // &:hover
+  //   -webkit-filter brightness(95%)
+  // &:active
+  //   -webkit-filter brightness(110%)
 
 $btn-circ
   display inline-block
@@ -184,6 +184,10 @@ $btn-circ
       border-color colValue
       color #ececec
       @extends $btn-generic
+      transition background 0.15s ease-in-out
+      &:active
+        background transparent
+        color @border-color
 
       for key, value in shades
           &-{key}
@@ -192,6 +196,11 @@ $btn-circ
             border-color fn(colValue, value)
             color #ececec
             @extends $btn-generic
+            transition background 0.15s ease-in-out
+            &:active
+              background transparent
+              color @border-color
+
 
 .btn-outline
   for col, colValue in colors
@@ -200,6 +209,10 @@ $btn-circ
       border-color colValue
       color colValue
       @extends $btn-generic
+      transition background 0.15s ease-in-out
+      &:active
+        background @border-color
+        color #ececec
 
       for key, value in shades
           &-{key}
@@ -207,7 +220,10 @@ $btn-circ
             border-color fn(colValue, value)
             color fn(colValue, value)
             @extends $btn-generic
-
+            transition background 0.15s ease-in-out
+            &:active
+              background @border-color
+              color #ececec
 .btn-circ
   for col, colValue in colors
     &-{col}
