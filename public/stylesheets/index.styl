@@ -333,20 +333,23 @@ nav
       clear both
       display block
 
-.nav-stack
-  &:active .nav-screen
-    display block
-
 .nav-screen
-  display block
   position absolute
   z-index 9999
   top 0
   left 0
   width 100%
   height 100%
-  background-color rgba(0,0,0,.7)
+  background-color hsla(272, 99%, 54%, 90%)
   opacity 0.95
+  ul
+    list-style-type none
+    padding-left 0
+    li
+      padding 30px
+      a
+        color hsl(0, 0%, 0%)
+        font-size 2rem
 
 .nav-inner
   padding 30px
@@ -356,6 +359,13 @@ nav
   top 50%
   left 50%
   background-color #fff
+
+.nav-close
+  position absolute
+  cursor pointer
+  top .5rem
+  right 3rem
+  font-size 2rem
 
 // nav
 // .nav
