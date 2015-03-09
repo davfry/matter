@@ -333,6 +333,29 @@ nav
       clear both
       display block
 
+.nav-stack
+  &:active .nav-screen
+    display block
+
+.nav-screen
+  display block
+  position absolute
+  z-index 9999
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background-color rgba(0,0,0,.7)
+  opacity 0.95
+
+.nav-inner
+  padding 30px
+  z-index 10000
+  position absolute
+  width 50%
+  top 50%
+  left 50%
+  background-color #fff
 
 // nav
 // .nav
